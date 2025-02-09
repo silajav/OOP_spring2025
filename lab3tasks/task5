@@ -1,0 +1,100 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class groceryStore{
+    string arritems[100];//max limit set to hundred.[item]
+    float arrprice[100];//corresponding prices
+    public:
+    
+    void add(string item, float price,int &totcount){
+        arritems[totcount]=item;
+        arrprice[totcount]=price;
+        totcount++;
+    }
+    
+    void update(string item,int totcount){
+        float newprice;
+        cout<<"enter new price: "<<endl;
+        cin>>newprice;
+        for (int i=0; i<totcount;i++){
+            if (arritems[i]==item){
+                arrprice[i]=newprice;
+            }
+        }
+    }
+
+    void Receipt(int start,int count){
+        float tot=0;
+        for (int i=start; i<(start+count); i++){
+            cout<<"item: "<<arritems[i]<<"price: "<<arrprice[i]<<endl;
+            tot+=arrprice[i];
+        }
+        cout<<"total cost: $"<<tot<<endl;
+        
+    }
+    
+    void view(int totcount){
+        for (int i=0; i<totcount; i++){
+            cout<<"Item:  "<<arritems[i]<<"  price:  $"<<arrprice[i]<<endl;
+        }
+    }
+    
+    
+};
+
+int main() {
+    groceryStore inventory;
+    //each time a customer arrives, she can add,update,etc and in the end generate a reciept and then exit.)
+    int choice;
+    string item;
+    float price;
+    int flag,count;
+    int totcount=0;
+    int start;
+    do{
+        cout<<"Enter choice:\n1-ADD ITEM\n2-UPDATE PRICES\n3-VIEW INVENTORY\n4-EXIT."<<endl;
+        cin>>choice;
+        flag=1;
+        count=0;
+        switch (choice){
+            case 1:
+                if (count==0){
+                    start=totcount;
+                }
+                cout<<"enter item name: "<<endl;
+                cin>>item;
+                cout<<"enter item's price: "<<endl;
+                cin>>price;
+                inventory.add(item, price,totcount);
+                count++;//keeps count of how many items added in this particular loop(for each customer.)
+                break;
+            case 2:
+                cout<<"Enter the item's name to update price: "<<endl;
+                cin>>item;
+                inventory.update(item,totcount);
+                break;
+            case 3:
+                cout<<"INVENTORY: "<<endl;
+                inventory.view(totcount);
+                flag=0;//if only viewing the invenotyr then there is no customer so no reciept.
+                break;
+           case 4:
+                cout<<"exiting..."<<endl;
+                break;
+           default:
+                cout<<"enter a valid choice. "<<endl;
+                break;
+}
+   } while (choice != 4);
+   if (flag == 1){
+       cout<<"generating receipt for this customer..."<<endl;
+       inventory.Receipt(start, count);
+      }
+      
+     
+
+   
+
+    return 0;
+}
