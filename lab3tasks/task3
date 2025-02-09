@@ -1,0 +1,78 @@
+#include <iostream>
+using namespace std;
+
+class planner{
+   string arr[12][30];
+   //arr[1][2] third day of february.
+   public:
+   planner(){
+       for (int i=0; i<12; i++){
+           for (int j=0; j<30; j++){
+               arr[i][j]="";
+           }
+       }
+   }
+   
+   void add(int month, int day, string task){
+       arr[month-1][day-1]=task;
+   }
+   
+   void remove(int month, int day){
+       if (arr[month-1][day-1]==""){
+           cout<<"error! no task present to delete."<<endl;
+       }else{
+           arr[month-1][day-1]="";
+       }
+       
+   }    
+   
+   void display(int month){
+       cout<<"schedule for month number: "<<month<<endl;
+       for (int i=0; i<30; i++){
+           if (arr[month-1][i]!=""){
+               cout<<"Task for day "<<i+1<<" : "<<arr[month-1][i]<<endl;
+           }
+   }
+
+    
+}
+};
+
+int main() {
+    int choice,month, day;
+    string task;
+    planner plan;
+    do{
+        cout<<"ENTER A CHOICE:\n1=Add task\n2=Remove a task\n3=Display tasks of a month\n4=Exit."<<endl;
+        cin>>choice;
+        switch (choice){
+            case 1:
+                cout<<"enter month and day to add task: "<<endl;
+                cin>>month>>day;
+                cout<<"enter the task: "<<endl;
+                cin>>task;
+                plan.add(month, day,task);
+                break;
+            case 2:
+               cout<<"enter month and day to delete task from: "<<endl;
+               cin>>month>>day;
+               plan.remove(month,day);
+               break;
+            case 3:
+               cout<<"Enter the number of the month for which you want tasks displayed: "<<endl;
+               cin>>month;
+               plan.display(month);
+               break;
+            case 4:
+              cout<<"exiting..."<<endl;
+              break;
+            default:
+              break;
+             
+             }
+        
+        
+    }while (choice!=4);
+    
+    return 0; 
+}
