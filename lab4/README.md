@@ -3,5 +3,7 @@
 
 # task 2 output:
   ![image](https://github.com/user-attachments/assets/9cf91a4c-15e1-4f4d-9c3d-19c1b4d2e82a)
+# task 3 output:
+  ![image](https://github.com/user-attachments/assets/86f0462d-5494-463e-92a2-a72da7eec9c1)
 
 
