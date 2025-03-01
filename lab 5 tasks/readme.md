@@ -4,8 +4,13 @@
 # task 4 output:
   ![image](https://github.com/user-attachments/assets/a7acb743-6947-453d-8a32-9f981ee63ff5)
 
-# task 5 output:
+# task 6 output:
    ![image](https://github.com/user-attachments/assets/e65f0a0a-6b57-47cd-9013-8a1b4bf1bd7f)
+
+# task 5 output:
+  ![image](https://github.com/user-attachments/assets/ef4a848b-785a-4753-afc4-84b5795231c9)
+
+   
 
   
   
