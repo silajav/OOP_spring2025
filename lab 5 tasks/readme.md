@@ -16,6 +16,10 @@
 
 # task 5 output:
   ![image](https://github.com/user-attachments/assets/ef4a848b-785a-4753-afc4-84b5795231c9)
+# task 7 output:
+   ![image](https://github.com/user-attachments/assets/ca513b23-9dbd-4d07-b7c8-f150b8a417d4)
+
+  
 
    
 
