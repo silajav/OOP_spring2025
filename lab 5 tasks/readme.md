@@ -2,7 +2,8 @@
    ![image](https://github.com/user-attachments/assets/c80cbf73-148f-4ae4-832b-8ef7e697d718)
    ![image](https://github.com/user-attachments/assets/7fac3188-c1cb-4f00-8357-fac9fe8ac20b)
  
-
+# task 2 output:
+  ![image](https://github.com/user-attachments/assets/5683411d-82ef-43c3-8db0-61bf6e857ec8)
 
 # task 3 output:
   ![image](https://github.com/user-attachments/assets/33ada9ff-aedf-402a-bcf8-638a13566f5b)
