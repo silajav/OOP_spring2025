@@ -30,8 +30,21 @@ class car: public vehicle{
     }
 };
 
+class electriccar:public car{
+    protected:
+    int blife;
+    
+    public:
+    electriccar(string b, int s, int seats, int life):car(b,s,seats), blife(life){}
+    void displaydetails(){
+        car::displaydetails();
+        cout<<"battery life: "<<blife<<endl;
+    }
+    
+};
+
 int main(){
-    car c("abc",100,4);
-    c.displaydetails();
+    electriccar speedo("abc",100,4,20);
+    speedo.displaydetails();
     return 0;
 }
