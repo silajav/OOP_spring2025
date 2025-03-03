@@ -6,3 +6,6 @@
 
 # task 3 output:
   ![image](https://github.com/user-attachments/assets/46c48ec6-74f7-437a-b170-dfe8149cabd6)
+
+# task 4 output:
+   ![image](https://github.com/user-attachments/assets/cb1c3111-b5e5-431e-9e47-9c4327ee9dd6)
