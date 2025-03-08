@@ -1,0 +1,139 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+using namespace std;
+
+class movie{
+    string title;
+    string director;
+    int duration;
+    
+    public:
+    movie(const string& _title, const string& _director, const int _duration){
+        title=_title;
+        director=_director;
+        duration=_duration;
+    }
+    string gettitle() const{
+        return title;
+    }
+    
+    string getdirector() const{
+        return director;
+    }
+    
+    int getduration() const{
+        return duration;
+    }
+};
+
+class playlist{
+    string name;
+    movie* movies[20];//20 max.
+    int nummovies;
+    
+    public:
+    playlist(const string& _name){
+        name=_name;
+        nummovies=0;
+    }
+    
+    void addmovies(movie* m){
+        if (nummovies>=20){
+            cout<<"max number of movies reached!"<<endl;
+        }else{
+            movies[nummovies]=m;
+            nummovies++;
+        }
+    }
+    
+    void remove(movie* m){
+        for (int i=0; i<nummovies; i
+        ++){
+            if (movies[i]==m){
+                for (int j=i; j<nummovies-1;j++){
+                    movies[j]=movies[j+1];
+                }
+                nummovies--;
+                break;
+            }
+        }
+    }
+    int getnum(){
+        return nummovies;
+    }
+    
+    void displayinfo() const{
+        cout<<"playlist name: "<<name<<endl;
+        for (int i=0; i<nummovies; i++){
+            cout<<"MOVIE "<<i+1<<": \n";
+            cout<<"Name: "<<movies[i]->gettitle()<<endl;
+            cout<<"director: "<<movies[i]->getdirector()<<endl;
+            cout<<"duration: "<<movies[i]->getduration()<<endl;
+        }
+    }
+};
+
+class user{
+    string name;
+    playlist* playlists[20];//assuming 20 max.
+    int numplaylists;
+    
+    public:
+    user(const string& n){
+        name=n;
+        numplaylists=0;
+    }
+    ~user(){
+        for (int i=0; i<numplaylists; i++){
+            delete playlists[i];
+        }
+    }
+
+    void createplaylist(const string& playlistname){
+        if (numplaylists>=20){
+            cout<<"max number of playlists reached!"<<endl;
+        }else{
+            //dymaically allocate value to the pointer ;
+            playlists[numplaylists]=new playlist(playlistname);
+            numplaylists++;
+        }
+    }
+    
+    void addmovie(playlist* p, movie* m){
+        for (int i=0; i<numplaylists; i++){
+            if (playlists[i]==p){
+                playlists[i]->addmovies(m);
+            }
+        }
+        
+    }
+    void removemovie(playlist* p, movie* m){
+        for (int i=0; i<numplaylists; i++){
+            if (playlists[i]==p){
+                playlists[i]->remove(m);
+            }
+    }    
+    }
+    
+    void displayplaylist(){
+        for (int i=0; i<numplaylists; i++){
+            playlists[i]->displayinfo();
+            
+        }
+    }
+};
+
+int main(){
+    playlist* p1=new playlist("comedy");
+    playlist* p2 = new playlist("action");
+    movie m2("incepotion", "abcjbcd",3);
+    movie m1("dark knight", "christopher nolan", 2);
+    user u1("mujibur rehman");
+    u1.createplaylist("funny");
+    u1.createplaylist("Action");
+    u1.addmovie(p1, &m1);
+    u1.addmovie(p2, &m2);
+    
+    delete p1;
+    delete p2;
+}
