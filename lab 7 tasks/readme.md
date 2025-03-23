@@ -6,4 +6,8 @@
   ![image](https://github.com/user-attachments/assets/70cdcfe3-3171-45da-9474-ff7922cbc31e)
   ![image](https://github.com/user-attachments/assets/eb671193-ae8a-4553-bf65-0458466d8f1b)
 
+# task 3 output:
+  ![image](https://github.com/user-attachments/assets/8a80deea-c8d0-4bc1-8bf7-11843361e284)
 
+# task 4 output:
+  ![image](https://github.com/user-attachments/assets/5b5274ef-e1b5-40bd-931c-18cf13a6d59d)
