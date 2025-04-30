@@ -12,6 +12,7 @@ class car{
          model=m;
          owner=o;
      }
+#this is a comment
      car(car& obj, string str){
          //the rest of the details are the same.
          num=obj.num;
